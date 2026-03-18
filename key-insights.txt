@@ -1,0 +1,27 @@
+**Customer Churn Analysis & Predictive Modeling – Executive Summary**
+
+**Objective**
+Analyze the drivers of customer churn and build a predictive model to identify customers at risk of leaving, with a particular focus on the impact of electricity price changes.
+
+**Key Findings**
+
+* A Random Forest churn prediction model was developed using customer, contract, consumption, and pricing features.
+* The model can successfully identify customers likely to churn, enabling proactive retention strategies.
+* Price volatility (changes in electricity prices) shows a measurable relationship with churn, indicating that customers are sensitive to fluctuations in energy pricing.
+* Additional drivers of churn include contract renewal timing, customer tenure, and consumption behavior.
+
+**Business Impact**
+
+* The model enables the company to identify **high-risk customers before they churn**, allowing targeted retention campaigns.
+* Focusing retention efforts on high-probability churn customers can significantly reduce revenue loss and improve customer lifetime value.
+* By proactively offering incentives (e.g., contract adjustments or pricing offers), the company can retain valuable SME customers and stabilize revenue streams.
+
+**Recommended Next Steps**
+
+1. Deploy the churn prediction model to score customers on a regular basis.
+2. Prioritize high-risk customers for targeted retention initiatives (e.g., contract renegotiation, pricing incentives).
+3. Monitor price changes closely and evaluate pricing strategies to reduce churn risk.
+4. Continuously retrain and improve the model as new customer and pricing data becomes available.
+
+**Conclusion**
+The analysis demonstrates that price dynamics and contract factors influence churn behavior. Implementing a predictive churn model will allow the company to move from reactive to proactive customer retention, improving long-term revenue stability.
