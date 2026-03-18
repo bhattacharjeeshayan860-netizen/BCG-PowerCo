@@ -1,74 +1,101 @@
-# 🏦 Loan Prediction using Machine Learning
+I am working on a customer churn prediction project from the BCG Data Science Job Simulation and need guidance on building a robust machine learning model.
 
-## 📌 Project Overview
-This project predicts whether a loan application will be approved or rejected using machine learning.
+Project Context:
+The goal is to understand whether changes in electricity pricing influence customer churn and to build a predictive model that identifies customers likely to leave.
 
-Financial institutions receive a large number of loan applications, and manually evaluating them can be time-consuming. Machine learning models can assist in predicting loan approvals based on applicant information.
+Data Overview:
+The dataset contains approximately 14,600 customers. Each row represents a single customer after merging two datasets:
 
----
+1. client_data – customer characteristics, consumption, contract information
+2. price_data – historical electricity price records aggregated into customer-level features
 
-## 📊 Dataset Features
+Target Variable:
 
-The dataset contains the following attributes:
+* churn (binary)
 
-- Gender
-- Marital Status
-- Dependents
-- Education
-- Self Employed
-- Applicant Income
-- Coapplicant Income
-- Loan Amount
-- Loan Amount Term
-- Credit History
-- Property Area
-- Loan Status (Target Variable)
+  * 0 = customer stayed
+  * 1 = customer churned
 
----
+Data Preparation Completed:
+I have already performed EDA and feature engineering.
 
-## 🧠 Project Workflow
+Steps completed:
 
-1. Data Loading
-2. Data Cleaning
-3. Exploratory Data Analysis (EDA)
-4. Handling Missing Values
-5. Encoding Categorical Variables
-6. Feature Engineering
-7. Model Training
-8. Model Evaluation
+* handled missing values
+* converted date columns to datetime
+* engineered contract-related features
+* aggregated price data by customer id
+* merged price features with client data
+* encoded categorical variables (channel_sales and origin_up)
+* converted boolean variables to numeric
+* removed the id column after merging
 
----
+Engineered Features Include:
+Customer behavior features
 
-## 🛠 Technologies Used
+* cons_12m
+* cons_last_month
+* avg_monthly_consumption
+* consumption_trend
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Jupyter Notebook
+Contract features
 
----
+* tenure_days
+* tenure_years
+* days_since_mod
+* days_to_renewal
+* num_years_antig
 
-## 📈 Objective
+Product features
 
-The goal of this project is to build a machine learning model that can predict loan approval based on applicant information.
+* nb_prod_act
+* has_gas
 
----
+Financial features
 
-## 🚀 Future Improvements
+* net_margin
+* margin_net_pow_ele
+* margin_gross_pow_ele
 
-- Hyperparameter tuning
-- Model comparison
-- Deploy model using Streamlit or Flask
-- Build an interactive dashboard
+Price sensitivity features (aggregated from price_data)
 
----
+* mean price
+* max price
+* min price
+* price change
+* price volatility
 
-## 👨‍💻 Author
+Categorical encodings
 
-**Shayan Bhattacharjee**
+* channel_sales_*
+* origin_up_*
 
-GitHub:  
-https://github.com/bhattacharjeeshayan860-netizen
+Dataset Characteristics:
+
+* ~14,600 rows
+* ~35–45 features
+* class imbalance (about 10% churn)
+
+Modeling Goals:
+
+1. Build a predictive model to estimate churn probability
+2. Identify the most important drivers of churn
+3. Evaluate model performance using appropriate metrics
+4. Apply the model to generate predictions for a separate dataset called data_for_predictions.csv
+
+What I need help with:
+
+1. Designing a proper ML pipeline for churn prediction
+2. Recommended models for this dataset (Logistic Regression, Random Forest, Gradient Boosting, etc.)
+3. Handling class imbalance
+4. Selecting the most important features
+5. Evaluating model performance using metrics such as:
+
+   * ROC-AUC
+   * precision
+   * recall
+   * F1 score
+6. Interpreting feature importance for business insights
+7. Generating predictions for new customers
+
+Please explain each step in a clear modeling workflow and provide reasoning for the model choices.
